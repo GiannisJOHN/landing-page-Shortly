@@ -1,0 +1,28 @@
+:root {
+    --dark: hsl(257, 27%, 26%);
+    --cyan: hsl(180, 66%, 49%);
+    --gray-violet: hsla(230, 25%, 95%, 1);
+    --dark-violet: hsl(260, 8%, 14%);
+}
+.dark {
+    background-color: var(--dark);
+}
+.dark-blue {
+    background-color: var(--dark-violet);
+}
+.secondary-bg {
+    background-color: var(--gray-violet);
+}
+.cyan-bg {
+    background-color: var(--cyan);
+}
+.text-cyan-color {
+    color: var(--cyan)
+}
+.shorterLink {
+    background-image: url('./images/bg-shorten-desktop.svg');
+    background-repeat: no-repeat;
+    background-color: var(--dark);
+    border-radius: 10px;
+    background-size: 100% 100%;
+}
