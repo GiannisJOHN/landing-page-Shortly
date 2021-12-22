@@ -4,13 +4,17 @@ class Shorten {
         this.input = input
         this.button = button
         this.data = null
+        this.pattern = /https:\/\/[a-z | \W]*/i
     }
 
     user() {
         this.input.addEventListener('input', (e) => {
             this.userInput = e.target.value
-            console.log(this.userInput)
         })
+    }
+    clearInput() {
+        this.input.value = ''
+        this.userInput = ''
     }
     api() {
         return (
@@ -27,7 +31,19 @@ class Shorten {
     click() {
         this.button.addEventListener('click', (e) => {
             e.preventDefault()
-                this.spinner()
+            var match = this.userInput.match(pattern)
+            if (match === null) {
+                document.querySelector('.urlResults').innerHTML = /*html*/ `
+                <div class='text-danger mt-2 alert d-flex align-items-center' role='alert'>!!__error__!! please enter a valid URL 
+                    <button type="button" class="btn-close ms-3" data-bs-dismiss="alert" aria-label="Close">
+                    </button>
+                </div>`
+                this.clearInput()
+
+                return
+            }
+            this.spinner()
+                console.log(match, this.userInput);
             var myPromise = new Promise( (resolve, reject) => {
                 resolve(this.api())
             })
@@ -35,6 +51,7 @@ class Shorten {
             myPromise.then((data) => {
                 this.data = data
                 this.html()
+                this.clearInput()
             })
         })
     }
@@ -55,7 +72,7 @@ class Shorten {
         document.querySelector('.urlResults').innerHTML = result
         document.querySelector('.urlResults h6:first-child').innerText = this.data.result.original_link
         document.querySelector('.urlResults h6:nth-child(3)').innerText = this.data.result.full_short_link
-        console.log(document.querySelector('.uu'))
+        
         document.querySelector('.urlResults button:first-of-type').addEventListener('click', () => {
             navigator.clipboard.writeText(this.data.result.full_short_link)
         })
@@ -82,16 +99,14 @@ const shorten = new Shorten(
     document.querySelector('.shorterLink input'),
     document.querySelector('.fetchButton')
     )
-
-shorten.work()
-
-
-
-
-
-
-
-
+    
+    shorten.work()
+    
+    
+    var pattern = /https:\/\/[a-z | \W]*/i
+    var url = 'https://iomentesidis.netlify.app/'
+    
+    var match = url.match(pattern)
 
 
 
@@ -109,7 +124,8 @@ shorten.work()
 
 
 
-var pattern = /https:\/\/[a-z | \W]*/i
-var url = 'https://iomentesidis.netlify.app/'
 
-var match = url.match(pattern)
+
+
+
+
