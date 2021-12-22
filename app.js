@@ -41,17 +41,20 @@ class Shorten {
     html() {
         
         var result = /*html*/ `
-        <div class="alert alert-light border fade show d-flex justify-content-between align-items-center mt-4" role="alert">
+        <div class="alert alert-light border fade show d-flex justify-content-between flex-column flex-lg-row align-items-start align-items-lg-center mt-4" role="alert">
             <h6></h6>
+            <hr class='d-flex d-lg-none w-100'>
             <h6 class='text-cyan-color'></h6>
-            <button class='btn cyan-bg text-white px-4'>Copy</button>
-            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            <button class='btn cyan-bg text-white px-4 mt-2 mt-lg-0'>Copy</button>
+            <div class='d-flex justify-content-center align-items-center w-100 xButton bg-light  bg-lg-transparent mt-3 mt-lg-0'>
+                <button type="button" class="btn-close p-3" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
         </div>
         `
 
-        document.querySelector('.urlResults > .container').innerHTML = result
+        document.querySelector('.urlResults').innerHTML = result
         document.querySelector('.urlResults h6:first-child').innerText = this.data.result.original_link
-        document.querySelector('.urlResults h6:nth-child(2)').innerText = this.data.result.full_short_link
+        document.querySelector('.urlResults h6:nth-child(3)').innerText = this.data.result.full_short_link
         console.log(document.querySelector('.uu'))
         document.querySelector('.urlResults button:first-of-type').addEventListener('click', () => {
             navigator.clipboard.writeText(this.data.result.full_short_link)
@@ -59,7 +62,7 @@ class Shorten {
 
     }
     spinner() {
-        document.querySelector('.urlResults > .container').innerHTML = /*html*/ `
+        document.querySelector('.urlResults').innerHTML = /*html*/ `
         <div class="alert alert-light border fade show d-flex justify-content-between align-items-center mt-4" role="alert">
             <div class='w-100 d-flex justify-content-center'>
                 <div class="spinner-border text-info" role="status">

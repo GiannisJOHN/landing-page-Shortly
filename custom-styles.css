@@ -26,3 +26,36 @@
     border-radius: 10px;
     background-size: 100% 100%;
 }
+.shorterApp {
+    position: relative;
+    top: calc(168px/2);
+}
+.mainHeader {
+    overflow: hidden;
+}
+@media (max-width: 992px) {
+    #navbarContent {
+        background-color: var(--dark);
+        border-radius: 20px;
+    }
+    #navbarContent * {
+        color: white;
+    }
+}
+.fetchButton {
+    width: 100%;
+}
+@media (min-width: 768px) {
+    .fetchButton {
+        width: 50%;
+    }
+}
+@media (min-width: 992px) {
+    .xButton {
+        width: auto !important;
+    }
+}
+
+
+
+

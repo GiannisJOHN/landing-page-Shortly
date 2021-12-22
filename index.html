@@ -26,24 +26,24 @@
                 </button>
             <!--Burger Button-->
             <!--Content-->
-            <div class="collapse navbar-collapse" id="navbarContent">
-                <div class="d-flex justify-content-between w-100">
+            <div class="collapse navbar-collapse mt-4 mt-lg-0 py-3 px-5 p-lg-0" id="navbarContent">
+                <div class="d-flex flex-column flex-lg-row justify-content-lg-between w-100">
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a href="#" class="nav-link">Features</a>
+                            <a href="#" class="nav-link text-center text-lg-start">Features</a>
                         </li>
                         <li class="nav-item">
-                            <a href="#" class="nav-link">Pricing</a>
+                            <a href="#" class="nav-link text-center text-lg-start">Pricing</a>
                         </li>
-                        <li class="nav-item">
-                            <a href="#" class="nav-link">Resourses</a>
+                        <li class="nav-item mb-4 mb-lg-0">
+                            <a href="#" class="nav-link text-center text-lg-start">Resourses</a>
                         </li>
                     </ul>
-                    <div>
-                        <a role='button' href="" class="btn">
+                    <div class="d-flex flex-column flex-lg-row">
+                        <a role='button' href="" class="btn px-5 py-2 mb-2 mb-lg-0">
                             Login
                         </a>
-                        <a role='button' href="" class="btn">
+                        <a role='button' href="" class="btn cyan-bg text-white rounded-pill px-5 py-2">
                             Signup
                         </a>
                     </div>
@@ -52,7 +52,7 @@
             <!--Content-->
         </div>
     </nav>
-    <header class="overflow-hidden pt-5">
+    <header class="mainHeader pt-5">
         <div class="container">
             <div class="row flex-column flex-lg-row flex-nowrap align-items-center">
                 <div class="col col-lg-6 order-lg-0 order-1">
@@ -78,16 +78,14 @@
         </div>
     </header>
     <main class="d-flex flex-column">
-        <div class="container">
-            <form class="shorterLink w-100 d-flex align-items-center justify-content-center position-relative" style='height: 168px;' >
-                <input class="py-1 w-50 me-5 ps-2 form-control" type="text" id="urlinput" placeholder="Shorten a link here">
-                <button class="fetchButton btn cyan-bg text-white px-5 fw-bold">
+        <div class="shorterApp container">
+            <form class="shorterLink px-5 w-100 d-flex flex-column flex-md-row align-items-center justify-content-center position-relative" style='height: 168px;' >
+                <input class="py-2 w-100 me-md-5 mb-3 mb-md-0 ps-3 form-control" type="text" id="urlinput" placeholder="Shorten a link here">
+                <button class="fetchButton btn cyan-bg text-white px-5 py-2 fw-bold">
                     Shorten it!
                 </button>
             </form>
-        </div>
-        <div class="urlResults">
-            <div class="container">
+            <div class="urlResults">
             </div>
         </div>
         <section class="secondary-bg" style='padding: 140px 0 140px 0;'>
